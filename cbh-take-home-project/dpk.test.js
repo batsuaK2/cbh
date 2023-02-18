@@ -32,6 +32,6 @@ describe("deterministicPartitionKey", () => {
 describe("deterministicPartitionKey", () => {
   it("When input is an object with partitionKey and a NOT a string value", () => {
     const trivialKey = deterministicPartitionKey({partitionKey : {key : "someKey"}});
-    expect(trivialKey).toBe(crypto.createHash("sha3-512").update(JSON.stringify({key : "someKey"})).digest("hex"));
+    expect(trivialKey).toBe(JSON.stringify({key : "someKey"}));
   });
 });

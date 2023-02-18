@@ -32,11 +32,10 @@ const getPartitionCandidate = (event) => {
   if (event.partitionKey) {
     if (typeof event.partitionKey === "string") {
       candidate.value = event.partitionKey;
-      candidate.hash = false;
     } else {
       candidate.value = JSON.stringify(event.partitionKey);
-      candidate.hash = true;
     }
+    candidate.hash = false;
   } else {
     candidate.value = JSON.stringify(event);
     candidate.hash = true
