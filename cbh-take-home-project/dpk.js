@@ -8,8 +8,6 @@ exports.deterministicPartitionKey = (event) => {
     candidate.hash = true;
   }
 
-  console.log(candidate)
-
   return getPartitionValue(candidate);
 };
 
