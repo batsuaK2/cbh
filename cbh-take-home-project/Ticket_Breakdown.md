@@ -16,3 +16,28 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+### Questions for clarification
+
+1. Is the requirement to use the custom id only in the pdf report or will it be used other places? 
+2. Depending on answer to 1 we may need to have the custom id in the agent metadata returned by `getShiftsByFacility` or just add it only in the  `generateReport`.
+3. How do we map database id to custom id ? We need a 1:1 relation. Is it 1:many relation?
+4. Where is this custom id stored? Is it another field in the agent table or any other table?
+5. Assuming the custom id is not unique we should never use it as key for any index.
+6. Custom id length ?
+7. What happens if custom id is not assigned? Do we use database id?
+
+### Ticket 1: 
+Type : Spike
+Task : Clarification questions
+Points : 2
+
+### Ticket 2:
+Type : Task
+Task : Design & Code the solution (Assuming the custom id is in the Agents table the best approach imo is to add it in the metadata that is returned by the `getShiftsByFacility`)
+Points : 2
+
+### Ticket 3:
+Type : Task
+Task : Design the solution (We need to get it displayed in the report so use the custom id in agent metadata when creating the report)
+Points : 1
