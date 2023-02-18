@@ -24,8 +24,9 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 3. How do we map database id to custom id ? We need a 1:1 relation. Is it 1:many relation?
 4. Where is this custom id stored? Is it another field in the agent table or any other table?
 5. Assuming the custom id is not unique we should never use it as key for any index.
-6. Custom id length ?
+6. Custom id length ? Custom id length ideally should not be greater than database id length (character length)
 7. What happens if custom id is not assigned? Do we use database id?
+8. is custom id alphanumeric, all characters, utf-8 ?
 
 ### Ticket 1: 
 Type : Spike
